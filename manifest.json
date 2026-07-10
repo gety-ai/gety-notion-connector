@@ -1,11 +1,12 @@
 {
-	"id": "sample_dummy",
-	"name": "Gety Sample Connector",
+	"id": "notion",
+	"name": "Notion",
 	"version": "0.1.0",
 	"min_gety_app_version": "0.5.1",
 	"capabilities": ["data-source"],
 	"entry": "dist/main.js",
-	"description": "A minimal runnable sample connector that indexes a small Gety introduction.",
+	"icon": "icon.png",
+	"description": "Indexes Notion pages shared with your integration and converts them to Markdown.",
 	"author": {
 		"name": "Gety"
 	},
@@ -16,5 +17,16 @@
 	"doc_link": {
 		"kind": "url",
 		"field": "url"
+	},
+	"config": {
+		"fields": [
+			{
+				"id": "personal_access_token",
+				"title": "Personal Access Token",
+				"type": "password",
+				"required": true,
+				"description": "Notion API token. Use an internal connection token from the Notion Developer portal (grant it access to the pages to index via Add connections), or a personal access token from notion.so/developers/tokens (PATs expire and must be rotated)."
+			}
+		]
 	}
 }
